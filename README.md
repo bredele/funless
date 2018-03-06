@@ -50,7 +50,7 @@ funless({
   name: val => val  
 }, {
   name: 'foo'
-}. true)
+}, true)
 // {name: 'foo'}
 ```
 
