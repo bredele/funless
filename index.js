@@ -6,6 +6,7 @@
 module.exports = funless
 
 
+
 /**
  * Traverse value and subsitute functions with their value.
  *
@@ -14,12 +15,12 @@ module.exports = funless
  * @api public
  */
 
-function funless (value) {
+function funless (value, ...args) {
   const type = typeof value
   if (type === 'object') {
-    return object(value)
+    return object(value, ...args)
   } else if (type === 'function') {
-    return value()
+    return value(...args)
   }
   return value
 }
@@ -33,9 +34,9 @@ function funless (value) {
  * @api public
  */
 
-function object(obj) {
+function object(obj, ...args) {
   Object.keys(obj).map(key => {
-    obj[key] = funless(obj[key])
+    obj[key] = funless(obj[key], ...args)
   })
   return obj
 }
