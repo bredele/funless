@@ -152,6 +152,23 @@ test('should pass null if compare mode on and object to compare does not exist',
   })
 })
 
+// test('compare mode should work with arrays as well', assert => {
+//   assert.plan(1)
+//   assert.deepEqual(funless(['hello', {
+//     foo: {
+//       bar: (name) => 'beep ' + (name || '')
+//     }
+//   }], ['something', {
+//     foo: {
+//       bar: 'boop'
+//     }
+//   }], true), ['hello', {
+//     foo: {
+//       bar: 'beep boop'
+//     }
+//   }])
+// })
+
 
 test('a final test', assert => {
   assert.plan(1)

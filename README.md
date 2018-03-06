@@ -43,6 +43,17 @@ funless(name => 'hello ' + name, 'john')
 
 As demonstrated above, funless works as well with arrays and allow you to pass arguments to the functions before substitution.
 
+Funless also have a compare mode to pass the corresponding value to a function between two objects.
+
+```js
+funless({
+  name: val => val  
+}, {
+  name: 'foo'
+}. true)
+// {name: 'foo'}
+```
+
 ## Installation
 
 ```shell

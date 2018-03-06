@@ -48,6 +48,14 @@ function object(obj, arg, compare) {
 
 
 
+/**
+ * Return argument property.
+ *
+ * @param {Any} arg
+ * @param {Any} key
+ * @api private
+ */
+
 function property (arg, key) {
   return arg ? arg[key] : null
 }
