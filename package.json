@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/bredele/funless/issues"
   },
-  "homepage": "https://github.com/bredele/funless#readme"
+  "homepage": "https://github.com/bredele/funless#readme",
+  "devDependencies": {
+    "tape": "^4.9.0"
+  }
 }
