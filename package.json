@@ -1,0 +1,26 @@
+{
+  "name": "funless",
+  "version": "1.0.0",
+  "description": "Objects without the fun...ction",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bredele/funless.git"
+  },
+  "keywords": [
+    "object",
+    "function"
+  ],
+  "author": "Olivier Wietrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/funless/issues"
+  },
+  "homepage": "https://github.com/bredele/funless#readme"
+}
