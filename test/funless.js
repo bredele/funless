@@ -80,3 +80,12 @@ test('should work with array', assert => {
   assert.plan(1)
   assert.deepEqual(funless([() => 'john']), ['john'])
 })
+
+test('should work with array containing objects', assert => {
+  assert.plan(1)
+  assert.deepEqual(funless([() => 'john', {
+    beep: () => 'boop'
+  }]), ['john', {
+    beep: 'boop'
+  }])
+})
