@@ -28,19 +28,19 @@ test('should not change object propertiea that are not functions', assert => {
 })
 
 
-// test('should traverse object and substitute all functions', assert => {
-//   assert.plan(1)
-//   assert.deepEqual(funless({
-//     bar: () => 'boop',
-//     hello: 'world',
-//     foo: {
-//       bar: () => 'beep'
-//     }
-//   }), {
-//     bar: 'boop',
-//     hello: 'world',
-//     foo: {
-//       bar: 'beep'
-//     }
-//   })
-// })
+test('should traverse object and substitute all functions', assert => {
+  assert.plan(1)
+  assert.deepEqual(funless({
+    bar: () => 'boop',
+    hello: 'world',
+    foo: {
+      bar: () => 'beep'
+    }
+  }), {
+    bar: 'boop',
+    hello: 'world',
+    foo: {
+      bar: 'beep'
+    }
+  })
+})
