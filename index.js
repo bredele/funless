@@ -8,7 +8,7 @@ module.exports = funless
 
 
 /**
- * Traverse value and subsitute functions with their value.
+ * Traverse type and subsitute functions with their value.
  *
  * @param {Object} obj
  * @return {Object}
