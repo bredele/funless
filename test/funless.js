@@ -74,3 +74,9 @@ test('should traverse object and substitute all functions', assert => {
     }
   })
 })
+
+
+test('should work with array', assert => {
+  assert.plan(1)
+  assert.deepEqual(funless([() => 'john']), ['john'])
+})
