@@ -11,16 +11,18 @@ module.exports = funless
  * Traverse type and subsitute functions with their value.
  *
  * @param {Object} obj
+ * @param {Any?} arg
+ * @param {Boolean?} compare mode (pass the coresponding key from arg)
  * @return {Object}
  * @api public
  */
 
-function funless (value, ...args) {
+function funless (value, arg, compare) {
   const type = typeof value
   if (type === 'object') {
-    return object(value, ...args)
+    return object(value, arg, compare)
   } else if (type === 'function') {
-    return value(...args)
+    return value(arg)
   }
   return value
 }
@@ -30,13 +32,22 @@ function funless (value, ...args) {
  * Traverse object.
  *
  * @param {Object} obj
+ * @param {Any?} arg
+ * @param {Boolean?} compare mode (pass the coresponding key from arg)
  * @return {Object}
  * @api public
  */
 
-function object(obj, ...args) {
+function object(obj, arg, compare) {
   Object.keys(obj).map(key => {
-    obj[key] = funless(obj[key], ...args)
+    if (compare) arg = property(arg, key)
+    obj[key] = funless(obj[key], arg, compare)
   })
   return obj
+}
+
+
+
+function property (arg, key) {
+  return arg ? arg[key] : null
 }

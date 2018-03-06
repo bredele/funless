@@ -105,6 +105,54 @@ test('should work with array containing nested objects', assert => {
 })
 
 
+test('should have a compare mode', assert => {
+  assert.plan(1)
+  assert.deepEqual(funless({
+    foo: {
+      bar: (name) => 'beep ' + name
+    }
+  }, {
+    foo: {
+      bar: 'boop'
+    }
+  }, true), {
+    foo: {
+      bar: 'beep boop'
+    }
+  })
+})
+
+test('should pass null if compare mode on and object key does not exist', assert => {
+  assert.plan(1)
+  assert.deepEqual(funless({
+    foo: {
+      bar: (name) => 'beep ' + (name || '')
+    }
+  }, {
+    foo: {
+      beep: 'boop'
+    }
+  }, true), {
+    foo: {
+      bar: 'beep '
+    }
+  })
+})
+
+test('should pass null if compare mode on and object to compare does not exist', assert => {
+  assert.plan(1)
+  assert.deepEqual(funless({
+    foo: {
+      bar: (name) => 'beep ' + (name || '')
+    }
+  }, null, true), {
+    foo: {
+      bar: 'beep '
+    }
+  })
+})
+
+
 test('a final test', assert => {
   assert.plan(1)
   assert.deepEqual(funless([() => 'john', {
